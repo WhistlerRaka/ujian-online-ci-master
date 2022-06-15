@@ -14,6 +14,12 @@ jika sudah mengikuti langkah diatas dengan benar seharusnya aplikasi sudah berja
 <h3>User</h3>
 <ul>
 <li>Administrator <br/> Email: admin@admin.com <br/> Password : password </li>
+
+list user admin teknik :
+
+- email : teknik@kkn.com
+  pswd : 1122334455
+
 list user untuk panitia :
 
 - email : gurusmp@kkn.com
@@ -21,11 +27,6 @@ list user untuk panitia :
 
 - email : gurusd@kkn.com
   pswd : 12345678
-
-list user admin teknik :
-
-- email : teknik@kkn.com
-  pswd : 1122334455
 
 </ul>
 

@@ -13,10 +13,10 @@ jika sudah mengikuti langkah diatas dengan benar seharusnya aplikasi sudah berja
 
 <h3>User</h3>
 <ul>
-<li>Administrator <br/> Email : admin@admin.com <br/> Password : password </li>
+<li>Administrator <br/> Email : admin@admin.com <br/> Password : password </li> </ul>
 
 <ul>
-<li>Admin Teknik <br/> Email : teknik@kkn.com <br/> Password : 1122334455 </li>
+<li>Admin Teknik <br/> Email : teknik@kkn.com <br/> Password : 1122334455 </li> </ul>
 
 <ul>
 <li>Panitia / Guru <br/> Email : gurusmp@kkn.com <br/> Password : 123456789 

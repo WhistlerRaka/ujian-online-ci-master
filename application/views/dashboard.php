@@ -62,7 +62,7 @@
                     <h3 class="box-title">Pemberitahuan</h3>
                 </div>
                 <div class="box-body">
-                    <p>Halo Selamat mengerjakan ujian, Good Luck Bro & Sist</p>
+                    <p>Halo Gaiss Selamat Datang di Ujian Online CBT, Good Luck Bro & Sist</p>
                 </div>
             </div>
         </div>

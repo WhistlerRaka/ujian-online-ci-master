@@ -21,9 +21,9 @@
                 <tr>
                     <th>No.</th>
                     <th>NIP</th>
-                    <th>Nama Dosen</th>
+                    <th>Nama Guru</th>
                     <th>Email</th>
-                    <th>Mata Kuliah</th>
+                    <th>Mata Pelajaran</th>
                     <th class="text-center">Action</th>
                     <th class="text-center">
                         <input type="checkbox" class="select_all">
@@ -35,9 +35,9 @@
                 <tr>
                     <th>No.</th>
                     <th>NIP</th>
-                    <th>Nama Dosen</th>
+                    <th>Nama Guru</th>
                     <th>Email</th>
-                    <th>Mata Kuliah</th>
+                    <th>Mata Pelajaran</th>
                     <th class="text-center">Action</th>
                     <th class="text-center">
                         <input type="checkbox" class="select_all">

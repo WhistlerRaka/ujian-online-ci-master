@@ -1,9 +1,9 @@
-<?=form_open('dosen/save', array('id'=>'formdosen'), array('method'=>'add'));?>
+<?= form_open('dosen/save', array('id' => 'formdosen'), array('method' => 'add')); ?>
 <div class="box">
     <div class="box-header with-border">
-        <h3 class="box-title">Form <?=$subjudul?></h3>
+        <h3 class="box-title">Form <?= $subjudul ?></h3>
         <div class="box-tools pull-right">
-            <a href="<?=base_url()?>dosen" class="btn btn-sm btn-flat btn-warning">
+            <a href="<?= base_url() ?>dosen" class="btn btn-sm btn-flat btn-warning">
                 <i class="fa fa-arrow-left"></i> Batal
             </a>
         </div>
@@ -17,21 +17,21 @@
                     <small class="help-block"></small>
                 </div>
                 <div class="form-group">
-                    <label for="nama_dosen">Nama Dosen</label>
+                    <label for="nama_dosen">Nama Guru</label>
                     <input type="text" class="form-control" name="nama_dosen" placeholder="Nama Dosen">
                     <small class="help-block"></small>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email Dosen</label>
+                    <label for="email">Email Guru</label>
                     <input type="text" class="form-control" name="email" placeholder="Email Dosen">
                     <small class="help-block"></small>
                 </div>
                 <div class="form-group">
-                    <label for="matkul">Mata Kuliah</label>
+                    <label for="matkul">Mata Pelajaran</label>
                     <select name="matkul" id="matkul" class="form-control select2" style="width: 100%!important">
-                        <option value="" disabled selected>Pilih Mata Kuliah</option>
+                        <option value="" disabled selected>Pilih Mata Pelajaran</option>
                         <?php foreach ($matkul as $row) : ?>
-                            <option value="<?=$row->id_matkul?>"><?=$row->nama_matkul?></option>
+                            <option value="<?= $row->id_matkul ?>"><?= $row->nama_matkul ?></option>
                         <?php endforeach; ?>
                     </select>
                     <small class="help-block"></small>
@@ -48,6 +48,6 @@
         </div>
     </div>
 </div>
-<?=form_close();?>
+<?= form_close(); ?>
 
-<script src="<?=base_url()?>assets/dist/js/app/master/dosen/add.js"></script>
+<script src="<?= base_url() ?>assets/dist/js/app/master/dosen/add.js"></script>

@@ -80,7 +80,7 @@
                         <?php else : ?>
                             <div class="callout callout-danger">
                                 Waktu untuk menekan tombol <strong>"MULAI"</strong> sudah habis.<br />
-                                Silahkan hubungi dosen anda untuk bisa mengikuti ujian pengganti.
+                                Silahkan hubungi kakak pendamping anda untuk bisa mengikuti ujian.
                             </div>
                         <?php endif; ?>
                     </div>

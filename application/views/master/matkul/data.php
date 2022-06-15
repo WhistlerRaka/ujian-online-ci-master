@@ -21,7 +21,7 @@
 			<thead>
 				<tr>
 					<th>No.</th>
-					<th>Mata Kuliah</th>
+					<th>Mata Pelajaran</th>
 					<th class="text-center">
 						<input type="checkbox" class="select_all">
 					</th>

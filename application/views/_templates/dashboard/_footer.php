@@ -10,7 +10,7 @@
 					Computer Based Test v2
 				</div>
 				<!-- Default to the left -->
-				<strong>Copyright &copy; 2022. By <a href="https://instagram.com/kknmbkm02_uwp?igshid=YmMyMTA2M2Y=">KKN UWP 2022</a>. </strong> All rights reserved
+				<strong>Copyright &copy; 2022. By <a href="https://instagram.com/kknmbkm02_uwp?igshid=YmMyMTA2M2Y=">KKN MBKM 2 UWP 2022</a>. </strong> All rights reserved
 			</footer>
 
 			</div>

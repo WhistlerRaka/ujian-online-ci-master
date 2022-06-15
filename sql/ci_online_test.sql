@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 21, 2019 at 11:07 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Waktu pembuatan: 15 Jun 2022 pada 03.04
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dosen`
+-- Struktur dari tabel `dosen`
 --
 
 CREATE TABLE `dosen` (
@@ -37,15 +36,15 @@ CREATE TABLE `dosen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `dosen`
+-- Dumping data untuk tabel `dosen`
 --
 
 INSERT INTO `dosen` (`id_dosen`, `nip`, `nama_dosen`, `email`, `matkul_id`) VALUES
-(1, '12345678', 'Koro Sensei', 'korosensei@gmail.com', 1),
-(3, '01234567', 'Tobirama Sensei', 'tobirama@gmail.com', 5);
+(1, '12345678', 'Guru Bahasa Inggris SD', 'gurusd@kkn.com', 1),
+(2, '123456789', 'Guru Bahasa Inggris SMP', 'gurusmp@kkn.com', 2);
 
 --
--- Triggers `dosen`
+-- Trigger `dosen`
 --
 DELIMITER $$
 CREATE TRIGGER `edit_user_dosen` BEFORE UPDATE ON `dosen` FOR EACH ROW UPDATE `users` SET `email` = NEW.email, `username` = NEW.nip WHERE `users`.`username` = OLD.nip
@@ -59,7 +58,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `groups`
+-- Struktur dari tabel `groups`
 --
 
 CREATE TABLE `groups` (
@@ -69,7 +68,7 @@ CREATE TABLE `groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `groups`
+-- Dumping data untuk tabel `groups`
 --
 
 INSERT INTO `groups` (`id`, `name`, `description`) VALUES
@@ -80,7 +79,7 @@ INSERT INTO `groups` (`id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `h_ujian`
+-- Struktur dari tabel `h_ujian`
 --
 
 CREATE TABLE `h_ujian` (
@@ -98,18 +97,16 @@ CREATE TABLE `h_ujian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `h_ujian`
+-- Dumping data untuk tabel `h_ujian`
 --
 
 INSERT INTO `h_ujian` (`id`, `ujian_id`, `mahasiswa_id`, `list_soal`, `list_jawaban`, `jml_benar`, `nilai`, `nilai_bobot`, `tgl_mulai`, `tgl_selesai`, `status`) VALUES
-(1, 1, 1, '1,2,3', '1:B:N,2:A:N,3:D:N', 3, '100.00', '100.00', '2019-02-16 08:35:05', '2019-02-16 08:36:05', 'N'),
-(2, 2, 1, '3,2,1', '3:D:N,2:C:N,1:D:N', 1, '33.00', '100.00', '2019-02-16 10:11:14', '2019-02-16 10:12:14', 'N'),
-(3, 3, 1, '5,6', '5:C:N,6:D:N', 2, '100.00', '100.00', '2019-02-16 11:06:25', '2019-02-16 11:07:25', 'N');
+(1, 1, 4, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:B:N,2:C:N,3:A:N,4:B:N,5:C:N,6:A:N,7:C:N,8:C:N,9:A:N,10:B:N,11:A:N,12:B:N,13:B:N,14:A:N,15:B:N,16:B:N,17:B:N,18:C:N,19:B:N,20:A:N', 20, '100.00', '500.00', '2022-06-14 23:37:19', '2022-06-15 00:37:19', 'N');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jurusan`
+-- Struktur dari tabel `jurusan`
 --
 
 CREATE TABLE `jurusan` (
@@ -118,17 +115,16 @@ CREATE TABLE `jurusan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `jurusan`
+-- Dumping data untuk tabel `jurusan`
 --
 
 INSERT INTO `jurusan` (`id_jurusan`, `nama_jurusan`) VALUES
-(1, 'Sistem Informasi'),
-(2, 'Teknik Informatika');
+(1, 'Kampoeng Semanggi');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jurusan_matkul`
+-- Struktur dari tabel `jurusan_matkul`
 --
 
 CREATE TABLE `jurusan_matkul` (
@@ -138,19 +134,17 @@ CREATE TABLE `jurusan_matkul` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `jurusan_matkul`
+-- Dumping data untuk tabel `jurusan_matkul`
 --
 
 INSERT INTO `jurusan_matkul` (`id`, `matkul_id`, `jurusan_id`) VALUES
 (1, 1, 1),
-(2, 1, 2),
-(3, 2, 2),
-(6, 5, 2);
+(2, 2, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas`
+-- Struktur dari tabel `kelas`
 --
 
 CREATE TABLE `kelas` (
@@ -160,20 +154,17 @@ CREATE TABLE `kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `kelas`
+-- Dumping data untuk tabel `kelas`
 --
 
 INSERT INTO `kelas` (`id_kelas`, `nama_kelas`, `jurusan_id`) VALUES
-(1, '12.1E.13', 1),
-(2, '11.1A.13', 1),
-(3, '10.1D.13', 1),
-(7, '12.1A.10', 2),
-(8, '12.1B.10', 2);
+(1, 'SD', 1),
+(2, 'SMP', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kelas_dosen`
+-- Struktur dari tabel `kelas_dosen`
 --
 
 CREATE TABLE `kelas_dosen` (
@@ -183,20 +174,17 @@ CREATE TABLE `kelas_dosen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `kelas_dosen`
+-- Dumping data untuk tabel `kelas_dosen`
 --
 
 INSERT INTO `kelas_dosen` (`id`, `kelas_id`, `dosen_id`) VALUES
-(1, 3, 1),
-(2, 2, 1),
-(3, 1, 1),
-(9, 2, 3),
-(10, 1, 3);
+(1, 1, 1),
+(2, 2, 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login_attempts`
+-- Struktur dari tabel `login_attempts`
 --
 
 CREATE TABLE `login_attempts` (
@@ -207,16 +195,37 @@ CREATE TABLE `login_attempts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `login_attempts`
+-- Dumping data untuk tabel `login_attempts`
 --
 
 INSERT INTO `login_attempts` (`id`, `ip_address`, `login`, `time`) VALUES
-(1, '::1', 'ad', 1550742963);
+(2, '::1', 'admin', 1655213426),
+(3, '::1', 'Administrator', 1655213445),
+(4, '::1', 'Administrator', 1655213452),
+(5, '::1', 'administrator', 1655213456),
+(6, '::1', '1122334444', 1655213987),
+(7, '::1', 'zrpratama7@gmail.com', 1655214165),
+(8, '::1', 'zrpratama7@gmail.com', 1655214170),
+(9, '::1', 'zrpratama7@gmail.com', 1655214175),
+(10, '::1', 'dosen@gmail.com', 1655214239),
+(11, '::1', '04042001', 1655214249),
+(12, '::1', 'kakasi', 1655214287),
+(13, '::1', 'kakasi', 1655214288),
+(14, '::1', 'kakasi', 1655214289),
+(15, '::1', 'dosen@gmail.com', 1655214311),
+(16, '::1', 'dosen@gmail.com', 1655214321),
+(17, '::1', 'dosen@gmail.com', 1655215567),
+(20, '::1', 'dosen@gmail.com', 1655216672),
+(21, '::1', 'dosen@gmail.com', 1655216674),
+(22, '::1', 'dosen@gmail.com', 1655216678),
+(24, '::1', 'bungar@kkn.com', 1655223904),
+(25, '::1', 'bungar@kkn.com', 1655223913),
+(26, '::1', 'bungar@kkn.com', 1655223997);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mahasiswa`
+-- Struktur dari tabel `mahasiswa`
 --
 
 CREATE TABLE `mahasiswa` (
@@ -229,16 +238,18 @@ CREATE TABLE `mahasiswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mahasiswa`
+-- Dumping data untuk tabel `mahasiswa`
 --
 
 INSERT INTO `mahasiswa` (`id_mahasiswa`, `nama`, `nim`, `email`, `jenis_kelamin`, `kelas_id`) VALUES
-(1, 'Muhammad Ghifari Arfananda', '12183018', 'mghifariarfan@gmail.com', 'L', 1);
+(2, 'M. ZIDAN AL HAFIZH', '18082013', 'mzidanah@kkn.com', 'L', 1),
+(3, 'BUNGA ROSALITA', '31032012', 'bungar@kkn.com', 'P', 1),
+(4, 'FABIO DIEGO PUTRA', '14062012', 'fabiodp@kkn.com', 'L', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `matkul`
+-- Struktur dari tabel `matkul`
 --
 
 CREATE TABLE `matkul` (
@@ -247,19 +258,17 @@ CREATE TABLE `matkul` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `matkul`
+-- Dumping data untuk tabel `matkul`
 --
 
 INSERT INTO `matkul` (`id_matkul`, `nama_matkul`) VALUES
-(1, 'Bahasa Inggris'),
-(2, 'Dasar Pemrograman'),
-(3, 'Enterpreneurship'),
-(5, 'Matematika Advanced');
+(1, 'Bahasa Inggris SD'),
+(2, 'Bahasa Inggris SMP');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `m_ujian`
+-- Struktur dari tabel `m_ujian`
 --
 
 CREATE TABLE `m_ujian` (
@@ -276,18 +285,16 @@ CREATE TABLE `m_ujian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `m_ujian`
+-- Dumping data untuk tabel `m_ujian`
 --
 
 INSERT INTO `m_ujian` (`id_ujian`, `dosen_id`, `matkul_id`, `nama_ujian`, `jumlah_soal`, `waktu`, `jenis`, `tgl_mulai`, `terlambat`, `token`) VALUES
-(1, 1, 1, 'First Test', 3, 1, 'acak', '2019-02-15 17:25:40', '2019-02-20 17:25:44', 'DPEHL'),
-(2, 1, 1, 'Second Test', 3, 1, 'acak', '2019-02-16 10:05:08', '2019-02-17 10:05:10', 'GOEMB'),
-(3, 3, 5, 'Try Out 01', 2, 1, 'acak', '2019-02-16 07:00:00', '2019-02-28 14:00:00', 'IFSDH');
+(1, 1, 1, 'Trial Error Pre Test SD', 20, 60, 'urut', '2022-06-14 05:23:47', '2022-06-16 23:23:59', 'UHRKM');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_soal`
+-- Struktur dari tabel `tb_soal`
 --
 
 CREATE TABLE `tb_soal` (
@@ -314,20 +321,35 @@ CREATE TABLE `tb_soal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tb_soal`
+-- Dumping data untuk tabel `tb_soal`
 --
 
 INSERT INTO `tb_soal` (`id_soal`, `dosen_id`, `matkul_id`, `bobot`, `file`, `tipe_file`, `soal`, `opsi_a`, `opsi_b`, `opsi_c`, `opsi_d`, `opsi_e`, `file_a`, `file_b`, `file_c`, `file_d`, `file_e`, `jawaban`, `created_on`, `updated_on`) VALUES
-(1, 1, 1, 1, '', '', '<p>Dian : The cake is scrumptious! I love i<br>Joni : … another piece?<br>Dian : Thank you. You should tell me the recipe.<br>Joni : I will.</p><p>Which of the following offering expressions best fill the blank?</p>', '<p>Do you mind if you have</p>', '<p>Would you like</p>', '<p>Shall you hav</p>', '<p>Can I have you</p>', '<p>I will bring you</p>', '', '', '', '', '', 'B', 1550225760, 1550225760),
-(2, 1, 1, 1, '', '', '<p>Fitri : The French homework is really hard. I don’t feel like to do it.<br>Rahmat : … to help you?<br>Fitri : It sounds great. Thanks, Rahmat!</p><p><br></p><p>Which of the following offering expressions best fill the blank?</p>', '<p>Would you like me</p>', '<p>Do you mind if I</p>', '<p>Shall I</p>', '<p>Can I</p>', '<p>I will</p>', '', '', '', '', '', 'A', 1550225952, 1550225952),
-(3, 1, 1, 1, 'd166959dabe9a81e4567dc44021ea503.jpg', 'image/jpeg', '<p>What is the picture describing?</p><p><small class=\"text-muted\">Sumber gambar: meros.jp</small></p>', '<p>The students are arguing with their lecturer.</p>', '<p>The students are watching their preacher.</p>', '<p>The teacher is angry with their students.</p>', '<p>The students are listening to their lecturer.</p>', '<p>The students detest the preacher.</p>', '', '', '', '', '', 'D', 1550226174, 1550226174),
-(5, 3, 5, 1, '', '', '<p>(2000 x 3) : 4 x 0 = ...</p>', '<p>NULL</p>', '<p>NaN</p>', '<p>0</p>', '<p>1</p>', '<p>-1</p>', '', '', '', '', '', 'C', 1550289702, 1550289724),
-(6, 3, 5, 1, '98a79c067fefca323c56ed0f8d1cac5f.png', 'image/png', '<p>Nomor berapakah ini?</p>', '<p>Sembilan</p>', '<p>Sepuluh</p>', '<p>Satu</p>', '<p>Tujuh</p>', '<p>Tiga</p>', '', '', '', '', '', 'D', 1550289774, 1550289774);
+(1, 1, 1, 5, '', '', '<p class=\"MsoListParagraph\" xss=removed><span lang=\"EN-ID\" xss=removed>What month is this month? This month\r\nis....<o></o></span></p>', '<p><span lang=\"EN-ID\" xss=removed>January</span><br></p>', '<p><span lang=\"EN-ID\" xss=removed><font color=\"#000000\" xss=removed>February</font></span><br></p>', '<p><span lang=\"EN-ID\" xss=removed>March</span><br></p>', '', '', '', '', '', '', '', 'B', 1655222834, 1655222834),
+(2, 1, 1, 5, '', '', '<p class=\"MsoListParagraph\" xss=removed><span lang=\"EN-ID\" xss=removed>How is Dion?  Dion is very....<o></o></span></p>', '<p>Sad</p>', '<p>Hungry </p>', '<p>Happy</p>', '', '', '', '', '', '', '', 'C', 1655222916, 1655222916),
+(3, 1, 1, 5, '', '', '<p class=\"MsoListParagraph\" xss=removed><span lang=\"EN-ID\" xss=removed>Where does Jane’s mother\r\ncook?<o></o></span></p>', '<p>Kitchen</p>', '<p>Bedroom</p>', '<p>Bathroom</p>', '', '', '', '', '', '', '', 'A', 1655222978, 1655222978),
+(4, 1, 1, 5, '', '', '<p class=\"MsoListParagraph\" xss=\"removed\"><span lang=\"EN-ID\" xss=\"removed\">How many bedrooms are\r\nthere in the house?<o></o></span></p>', '<p>Three</p>', '<p>Four</p>', '<p>Five</p>', '', '', '', '', '', '', '', 'B', 1655223019, 1655223180),
+(5, 1, 1, 5, '', '', '<p class=\"MsoListParagraph\" xss=removed><span lang=\"EN-ID\" xss=removed>What is next to the\r\nkitchen?<o></o></span></p>', '<p>Living room</p>', '<p>Bathroom</p>', '<p>Bedroom</p>', '', '', '', '', '', '', '', 'C', 1655223049, 1655223049),
+(6, 1, 1, 5, '', '', '<p class=\"MsoListParagraphCxSpFirst\" xss=\"removed\"><span lang=\"EN-ID\" xss=\"removed\">Nadin       :\r\n\"Hello Chandra, how are you?\" </span></p><p class=\"MsoListParagraphCxSpFirst\" xss=\"removed\">Chandra   : \"....\"</p>', '<p>I\'m fine thank you</p>', '<p>Good bye</p>', '<p>Good morning</p>', '', '', '', '', '', '', '', 'A', 1655223115, 1655225541),
+(7, 1, 1, 5, '', '', '<p class=\"MsoListParagraphCxSpFirst\" xss=\"removed\"><span lang=\"EN-ID\" xss=\"removed\">Teacher     :\r\n\"Good bye students.\" </span></p><p class=\"MsoListParagraphCxSpFirst\" xss=\"removed\">Students   : \"....\"</p>', '<p>Good morning teacher</p>', '<p>good afternoon teacher</p>', '<p>Good bye teacher</p>', '', '', '', '', '', '', '', 'C', 1655223261, 1655225556),
+(8, 1, 1, 5, '', '', '<p class=\"MsoListParagraphCxSpFirst\" xss=removed><span lang=\"EN-ID\" xss=removed>Nisa          :\r\n\"Excuse me, what is your name?\" <o></o></span></p><p>\r\n\r\n</p><p class=\"MsoListParagraphCxSpLast\" xss=removed><span lang=\"EN-ID\" xss=removed>Nira          : \"...... is Nira.\"<o></o></span></p>', '<p>Hello</p>', '<p>I\'m fine</p>', '<p>My name</p>', '', '', '', '', '', '', '', 'C', 1655223304, 1655223304),
+(9, 1, 1, 5, '', '', '<p>The sky is</p>', '<p>Blue</p>', '<p>red</p>', '<p>yellow</p>', '', '', '', '', '', '', '', 'A', 1655223352, 1655223352),
+(10, 1, 1, 5, '', '', '<p><span lang=\"EN-ID\" xss=removed>My hair is.... (hitam) </span><br></p>', '<p>purple</p>', '<p>black</p>', '<p>yellow</p>', '', '', '', '', '', '', '', 'B', 1655223389, 1655223389),
+(11, 1, 1, 5, '', '', '<p><span lang=\"EN-ID\" xss=removed>Banana is.... (kuning)  </span><br></p>', '<p>Yellow</p>', '<p>black</p>', '<p>blue</p>', '', '', '', '', '', '', '', 'A', 1655223413, 1655223413),
+(12, 1, 1, 5, '', '', '<p><span lang=\"EN-ID\" xss=removed>We meet Mr.Benny in the morning. We say\r\n....   </span><br></p>', '<p>Good bye</p>', '<p>Good morning</p>', '<p>Good night</p>', '', '', '', '', '', '', '', 'B', 1655223485, 1655223485),
+(13, 1, 1, 5, '', '', '<p>8 + 7 = .....</p>', '<p>fourteen</p>', '<p>fifteen</p>', '<p>sixteen</p>', '', '', '', '', '', '', '', 'B', 1655223523, 1655223523),
+(14, 1, 1, 5, '', '', '<p>20 - 8 = .....</p>', '<p>twelve</p>', '<p>thirteen</p>', '<p>fourteen</p>', '', '', '', '', '', '', '', 'A', 1655223560, 1655223560),
+(15, 1, 1, 5, '', '', '<p>Riana eats .... (nanas)</p>', '<p>Apple</p>', '<p>Pineapple</p>', '<p>mango</p>', '', '', '', '', '', '', '', 'B', 1655223587, 1655223587),
+(16, 1, 1, 5, '7b89326816a6aa7d7771e5ea2960b8cf.PNG', 'image/png', '<p>It is a ... (TIME)</p>', '<p>Book</p>', '<p>Clock</p>', '<p>telephone</p>', '', '', '', '', '', '', '', 'B', 1655223656, 1655223656),
+(17, 1, 1, 5, '', '', '<p>The day after Sunday is ... </p>', '<p>Thursday</p>', '<p>Monday</p>', '<p>Friday</p>', '', '', '', '', '', '', '', 'B', 1655223691, 1655225580),
+(18, 1, 1, 5, '', '', '<p><span lang=\"EN-ID\" xss=removed>Today is Wednesday. In Indonesia is ….  </span><br></p>', '<p><span lang=\"EN-ID\" xss=removed>Hari ini hari Senin       </span><br></p>', '<p><span lang=\"EN-ID\" xss=removed>Hari ini hari Selasa</span><br></p>', '<p><span lang=\"EN-ID\" xss=removed>Hari ini hari Rabu</span><br></p>', '', '', '', '', '', '', '', 'C', 1655223738, 1655223738),
+(19, 1, 1, 5, '', '', '<p><span xss=removed>My brother is playing football in the ………  </span><br></p>', '<p>Mall</p>', '<p>Field</p>', '<p>Swimming pool</p>', '', '', '', '', '', '', '', 'B', 1655223768, 1655223768),
+(20, 1, 1, 5, '', '', '<p><span xss=removed>Alfiansyah is taking a bath in the ……………   </span><br></p>', '<p>Bathroom</p>', '<p>Bedroom</p>', '<p>Kitchen</p>', '', '', '', '', '', '', '', 'A', 1655223799, 1655223799);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -353,19 +375,22 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `email`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'Administrator', '$2y$12$tGY.AtcyXrh7WmccdbT1rOuKEcTsKH6sIUmDr0ore1yN4LnKTTtuu', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1550743550, 1, 'Admin', 'Istrator', 'ADMIN', '0'),
-(3, '::1', '12183018', '$2y$10$TLtlU8WsPUBQgLWcL5n8SO9YoTd1jDktGIkIvm9Fk2ROI0yJQ.TlC', 'mghifariarfan@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1550225511, 1550743572, 1, 'Muhammad', 'Arfananda', NULL, NULL),
-(4, '::1', '12345678', '$2y$10$9CxUKgrB/0tlgOEIec1Fl.RMrLLcpJPGyFqqRh2gec.crgeVBWvym', 'korosensei@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1550226286, 1550743600, 1, 'Koro', 'Sensei', NULL, NULL),
-(8, '::1', '01234567', '$2y$10$5pAJAyB3XvrGEkvGak2QI.1pWqwK/S76r3Pf4ltQSGQzLMpw53Tvy', 'tobirama@gmail.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1550289356, 1550743585, 1, 'Tobirama', 'Sensei', NULL, NULL);
+(1, '127.0.0.1', 'Administrator', '$2y$12$tGY.AtcyXrh7WmccdbT1rOuKEcTsKH6sIUmDr0ore1yN4LnKTTtuu', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1655254827, 1, 'Admin', 'Istrator', 'ADMIN', '0'),
+(18, '::1', '12345678', '$2y$10$RXFI89vqlDmUnZigr6GrUO0C9T0Ces1KrisXEUH2wBsuQIW66VKRO', 'gurusd@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655222041, 1655222087, 1, 'Guru', 'SD', NULL, NULL),
+(19, '::1', '123456789', '$2y$10$y01c7SV.BXJMD.RmOVqyn.rHC1Cr1oVgbkEbfaKVmYpEAGaJsOqRO', 'gurusmp@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655222044, NULL, 1, 'Guru', 'SMP', NULL, NULL),
+(20, '::1', '18082012', '$2y$10$6MSnmC12CKjxHhggI/TbnudKUJ3tw4TRrD70fkzUKX7AiI7.TwOr6', 'zidanah@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655222229, NULL, 1, 'M.', 'HAFIZH', NULL, NULL),
+(21, '::1', '14062012', '$2y$10$HsczY1NuSNuNv9pYQwTeCe.QOp31b9u5PDiQEHTr/cCVaO24qRTIW', 'fabiodp@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655224065, 1655224219, 1, 'FABIO', 'PUTRA', NULL, NULL),
+(22, '::1', '18082013', '$2y$10$45uoaeeOyflFYy5fhQQkR.TVK.U/HJLQkvJh4wbBGGOuXMkh.OwjG', 'mzidanah@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655224067, NULL, 1, 'M.', 'HAFIZH', NULL, NULL),
+(23, '::1', '31032012', '$2y$10$YFfMSO1lYE93YeFp8adtBeSgsImNsgrzGy1Pl1CnqTRWBSh8Bp5kq', 'bungar@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655224068, NULL, 1, 'BUNGA', 'ROSALITA', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_groups`
+-- Struktur dari tabel `users_groups`
 --
 
 CREATE TABLE `users_groups` (
@@ -375,21 +400,24 @@ CREATE TABLE `users_groups` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users_groups`
+-- Dumping data untuk tabel `users_groups`
 --
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (3, 1, 1),
-(5, 3, 3),
-(6, 4, 2),
-(10, 8, 2);
+(20, 18, 2),
+(21, 19, 2),
+(22, 20, 3),
+(23, 21, 3),
+(24, 22, 3),
+(25, 23, 3);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `dosen`
+-- Indeks untuk tabel `dosen`
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`id_dosen`),
@@ -398,13 +426,13 @@ ALTER TABLE `dosen`
   ADD KEY `matkul_id` (`matkul_id`);
 
 --
--- Indexes for table `groups`
+-- Indeks untuk tabel `groups`
 --
 ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `h_ujian`
+-- Indeks untuk tabel `h_ujian`
 --
 ALTER TABLE `h_ujian`
   ADD PRIMARY KEY (`id`),
@@ -412,13 +440,13 @@ ALTER TABLE `h_ujian`
   ADD KEY `mahasiswa_id` (`mahasiswa_id`);
 
 --
--- Indexes for table `jurusan`
+-- Indeks untuk tabel `jurusan`
 --
 ALTER TABLE `jurusan`
   ADD PRIMARY KEY (`id_jurusan`);
 
 --
--- Indexes for table `jurusan_matkul`
+-- Indeks untuk tabel `jurusan_matkul`
 --
 ALTER TABLE `jurusan_matkul`
   ADD PRIMARY KEY (`id`),
@@ -426,14 +454,14 @@ ALTER TABLE `jurusan_matkul`
   ADD KEY `matkul_id` (`matkul_id`);
 
 --
--- Indexes for table `kelas`
+-- Indeks untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
   ADD PRIMARY KEY (`id_kelas`),
   ADD KEY `jurusan_id` (`jurusan_id`);
 
 --
--- Indexes for table `kelas_dosen`
+-- Indeks untuk tabel `kelas_dosen`
 --
 ALTER TABLE `kelas_dosen`
   ADD PRIMARY KEY (`id`),
@@ -441,13 +469,13 @@ ALTER TABLE `kelas_dosen`
   ADD KEY `dosen_id` (`dosen_id`);
 
 --
--- Indexes for table `login_attempts`
+-- Indeks untuk tabel `login_attempts`
 --
 ALTER TABLE `login_attempts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `mahasiswa`
+-- Indeks untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`id_mahasiswa`),
@@ -456,13 +484,13 @@ ALTER TABLE `mahasiswa`
   ADD KEY `kelas_id` (`kelas_id`);
 
 --
--- Indexes for table `matkul`
+-- Indeks untuk tabel `matkul`
 --
 ALTER TABLE `matkul`
   ADD PRIMARY KEY (`id_matkul`);
 
 --
--- Indexes for table `m_ujian`
+-- Indeks untuk tabel `m_ujian`
 --
 ALTER TABLE `m_ujian`
   ADD PRIMARY KEY (`id_ujian`),
@@ -470,7 +498,7 @@ ALTER TABLE `m_ujian`
   ADD KEY `dosen_id` (`dosen_id`);
 
 --
--- Indexes for table `tb_soal`
+-- Indeks untuk tabel `tb_soal`
 --
 ALTER TABLE `tb_soal`
   ADD PRIMARY KEY (`id_soal`),
@@ -478,7 +506,7 @@ ALTER TABLE `tb_soal`
   ADD KEY `dosen_id` (`dosen_id`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -488,7 +516,7 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `uc_email` (`email`) USING BTREE;
 
 --
--- Indexes for table `users_groups`
+-- Indeks untuk tabel `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD PRIMARY KEY (`id`),
@@ -497,146 +525,146 @@ ALTER TABLE `users_groups`
   ADD KEY `fk_users_groups_groups1_idx` (`group_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `dosen`
+-- AUTO_INCREMENT untuk tabel `dosen`
 --
 ALTER TABLE `dosen`
-  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `groups`
+-- AUTO_INCREMENT untuk tabel `groups`
 --
 ALTER TABLE `groups`
   MODIFY `id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `h_ujian`
+-- AUTO_INCREMENT untuk tabel `h_ujian`
 --
 ALTER TABLE `h_ujian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `jurusan`
+-- AUTO_INCREMENT untuk tabel `jurusan`
 --
 ALTER TABLE `jurusan`
-  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `jurusan_matkul`
+-- AUTO_INCREMENT untuk tabel `jurusan_matkul`
 --
 ALTER TABLE `jurusan_matkul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `kelas`
+-- AUTO_INCREMENT untuk tabel `kelas`
 --
 ALTER TABLE `kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `kelas_dosen`
+-- AUTO_INCREMENT untuk tabel `kelas_dosen`
 --
 ALTER TABLE `kelas_dosen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `login_attempts`
+-- AUTO_INCREMENT untuk tabel `login_attempts`
 --
 ALTER TABLE `login_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT for table `mahasiswa`
+-- AUTO_INCREMENT untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id_mahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_mahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `matkul`
+-- AUTO_INCREMENT untuk tabel `matkul`
 --
 ALTER TABLE `matkul`
-  MODIFY `id_matkul` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_matkul` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `m_ujian`
+-- AUTO_INCREMENT untuk tabel `m_ujian`
 --
 ALTER TABLE `m_ujian`
-  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_soal`
+-- AUTO_INCREMENT untuk tabel `tb_soal`
 --
 ALTER TABLE `tb_soal`
-  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `users_groups`
+-- AUTO_INCREMENT untuk tabel `users_groups`
 --
 ALTER TABLE `users_groups`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `dosen`
+-- Ketidakleluasaan untuk tabel `dosen`
 --
 ALTER TABLE `dosen`
   ADD CONSTRAINT `dosen_ibfk_1` FOREIGN KEY (`matkul_id`) REFERENCES `matkul` (`id_matkul`);
 
 --
--- Constraints for table `h_ujian`
+-- Ketidakleluasaan untuk tabel `h_ujian`
 --
 ALTER TABLE `h_ujian`
   ADD CONSTRAINT `h_ujian_ibfk_1` FOREIGN KEY (`ujian_id`) REFERENCES `m_ujian` (`id_ujian`),
   ADD CONSTRAINT `h_ujian_ibfk_2` FOREIGN KEY (`mahasiswa_id`) REFERENCES `mahasiswa` (`id_mahasiswa`);
 
 --
--- Constraints for table `jurusan_matkul`
+-- Ketidakleluasaan untuk tabel `jurusan_matkul`
 --
 ALTER TABLE `jurusan_matkul`
   ADD CONSTRAINT `jurusan_matkul_ibfk_1` FOREIGN KEY (`jurusan_id`) REFERENCES `jurusan` (`id_jurusan`),
   ADD CONSTRAINT `jurusan_matkul_ibfk_2` FOREIGN KEY (`matkul_id`) REFERENCES `matkul` (`id_matkul`);
 
 --
--- Constraints for table `kelas_dosen`
+-- Ketidakleluasaan untuk tabel `kelas_dosen`
 --
 ALTER TABLE `kelas_dosen`
   ADD CONSTRAINT `kelas_dosen_ibfk_1` FOREIGN KEY (`dosen_id`) REFERENCES `dosen` (`id_dosen`),
   ADD CONSTRAINT `kelas_dosen_ibfk_2` FOREIGN KEY (`kelas_id`) REFERENCES `kelas` (`id_kelas`);
 
 --
--- Constraints for table `mahasiswa`
+-- Ketidakleluasaan untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
   ADD CONSTRAINT `mahasiswa_ibfk_2` FOREIGN KEY (`kelas_id`) REFERENCES `kelas` (`id_kelas`);
 
 --
--- Constraints for table `m_ujian`
+-- Ketidakleluasaan untuk tabel `m_ujian`
 --
 ALTER TABLE `m_ujian`
   ADD CONSTRAINT `m_ujian_ibfk_1` FOREIGN KEY (`dosen_id`) REFERENCES `dosen` (`id_dosen`),
   ADD CONSTRAINT `m_ujian_ibfk_2` FOREIGN KEY (`matkul_id`) REFERENCES `matkul` (`id_matkul`);
 
 --
--- Constraints for table `tb_soal`
+-- Ketidakleluasaan untuk tabel `tb_soal`
 --
 ALTER TABLE `tb_soal`
   ADD CONSTRAINT `tb_soal_ibfk_1` FOREIGN KEY (`matkul_id`) REFERENCES `matkul` (`id_matkul`),
   ADD CONSTRAINT `tb_soal_ibfk_2` FOREIGN KEY (`dosen_id`) REFERENCES `dosen` (`id_dosen`);
 
 --
--- Constraints for table `users_groups`
+-- Ketidakleluasaan untuk tabel `users_groups`
 --
 ALTER TABLE `users_groups`
   ADD CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
@@ -646,3 +674,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ 

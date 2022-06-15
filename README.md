@@ -20,7 +20,7 @@ jika sudah mengikuti langkah diatas dengan benar seharusnya aplikasi sudah berja
 
 <ul>
 <li>Panitia / Guru <br/> Email : gurusmp@kkn.com <br/> Password : 123456789 
-                   <br> Email : gurusd@kkn.com   <br/> Password : 12345678</li>
+                   <br/> Email : gurusd@kkn.com   <br/> Password : 12345678</li>
 
 </ul>
 

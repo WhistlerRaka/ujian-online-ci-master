@@ -4,7 +4,7 @@
 		<h3 class="text-center mt-0 mb-4">
 			<b>C</b>omputer <b>B</b>ased <b>T</b>est
 		</h3>
-		<p class="login-box-msg">Silahkan masukkan email & password anda yang telah di berikan</p>
+		<p class="login-box-msg">Silahkan masukkan email & password yang telah di berikan</p>
 
 		<div id="infoMessage" class="text-center"><?php echo $message; ?></div>
 
@@ -36,6 +36,18 @@
 		<?= form_close(); ?>
 
 		<a href="<?= base_url() ?>auth/forgot_password" class="text-center"><?= lang('login_forgot_password'); ?></a>
+		<div>
+			<a>
+				<img src="<?= base_url() ?>assets/dist/img/kampus_merdeka.png" width="50" height="30">
+
+				<img src="<?= base_url() ?>assets/dist/img/kampungberseriastra.png" width="50" height="30">
+
+				<img src="<?= base_url() ?>assets/dist/img/LOGO MBKM 02.png" width="40" height="40">
+
+				<img src="<?= base_url() ?>assets/dist/img/UWP RESEARCH.png" width="80" height="25">
+
+			</a>
+		</div>
 
 	</div>
 </div>

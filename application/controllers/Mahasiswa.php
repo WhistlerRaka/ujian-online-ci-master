@@ -94,6 +94,7 @@ class Mahasiswa extends CI_Controller
 	public function save()
 	{
 		$method = $this->input->post('method', true);
+
 		$this->validasi_mahasiswa($method);
 
 		if ($this->form_validation->run() == FALSE) {

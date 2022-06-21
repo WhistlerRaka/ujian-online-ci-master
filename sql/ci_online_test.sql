@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jun 2022 pada 03.04
+-- Waktu pembuatan: 16 Jun 2022 pada 03.32
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 7.4.27
 
@@ -41,7 +41,8 @@ CREATE TABLE `dosen` (
 
 INSERT INTO `dosen` (`id_dosen`, `nip`, `nama_dosen`, `email`, `matkul_id`) VALUES
 (1, '12345678', 'Guru Bahasa Inggris SD', 'gurusd@kkn.com', 1),
-(2, '123456789', 'Guru Bahasa Inggris SMP', 'gurusmp@kkn.com', 2);
+(2, '123456789', 'Guru Bahasa Inggris SMP', 'gurusmp@kkn.com', 2),
+(3, '1122334455', 'Arek Teknik', 'teknik@kkn.com', 1);
 
 --
 -- Trigger `dosen`
@@ -101,7 +102,20 @@ CREATE TABLE `h_ujian` (
 --
 
 INSERT INTO `h_ujian` (`id`, `ujian_id`, `mahasiswa_id`, `list_soal`, `list_jawaban`, `jml_benar`, `nilai`, `nilai_bobot`, `tgl_mulai`, `tgl_selesai`, `status`) VALUES
-(1, 1, 4, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:B:N,2:C:N,3:A:N,4:B:N,5:C:N,6:A:N,7:C:N,8:C:N,9:A:N,10:B:N,11:A:N,12:B:N,13:B:N,14:A:N,15:B:N,16:B:N,17:B:N,18:C:N,19:B:N,20:A:N', 20, '100.00', '500.00', '2022-06-14 23:37:19', '2022-06-15 00:37:19', 'N');
+(1, 1, 4, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:B:N,2:C:N,3:A:N,4:B:N,5:C:N,6:A:N,7:C:N,8:C:N,9:A:N,10:B:N,11:A:N,12:B:N,13:B:N,14:A:N,15:B:N,16:B:N,17:B:N,18:C:N,19:B:N,20:A:N', 20, '100.00', '500.00', '2022-06-14 23:37:19', '2022-06-15 00:37:19', 'N'),
+(2, 1, 56, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:A:N,2:B:N,3:B:N,4:B:N,5:A:N,6:A:N,7:B:N,8:A:N,9::N,10::N,11::N,12::N,13::N,14::N,15::N,16::N,17::N,18::N,19::N,20::N', 2, '10.00', '500.00', '2022-06-15 20:48:11', '2022-06-15 21:48:11', 'N'),
+(3, 3, 56, '15,17', '15:D:N,17:E:N', 0, '0.00', '500.00', '2022-06-15 20:51:00', '2022-06-15 20:56:00', 'N'),
+(4, 1, 51, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:A:N,2::N,3::N,4::N,5::N,6::N,7::N,8::N,9::N,10::N,11::N,12::N,13::N,14::N,15::N,16::N,17::N,18::N,19::N,20::N', 0, '0.00', '0.00', '2022-06-15 21:47:44', '2022-06-15 22:47:44', 'Y'),
+(5, 1, 39, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:B:N,2:A:N,3:C:N,4:B:N,5:A:N,6:A:N,7:C:N,8:C:N,9:A:N,10:B:N,11:A:N,12:B:N,13:B:N,14:A:N,15:B:N,16:B:N,17:B:N,18:C:N,19:B:N,20:A:N', 17, '85.00', '500.00', '2022-06-15 21:49:00', '2022-06-15 22:49:00', 'N'),
+(6, 1, 47, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:B:N,2:B:N,3:A:N,4:B:N,5:B:N,6:A:N,7:C:N,8:C:N,9:C:N,10:C:N,11:A:N,12:B:N,13:B:N,14:A:N,15:C:N,16:B:N,17:B:N,18:B:N,19:C:N,20:B:N', 12, '60.00', '500.00', '2022-06-15 21:49:51', '2022-06-15 22:49:51', 'N'),
+(7, 1, 48, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:A:N,2:A:N,3:A:N,4:C:N,5:B:N,6:A:N,7:C:N,8:C:N,9:A:N,10:B:N,11:A:N,12:B:N,13:B:N,14:A:N,15:B:N,16:B:N,17:B:N,18:C:N,19:B:N,20:A:N', 16, '80.00', '500.00', '2022-06-15 21:49:56', '2022-06-15 22:49:56', 'N'),
+(8, 1, 43, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:C:Y,2:A:N,3:A:N,4:A:N,5:D:N,6:A:N,7:C:N,8:C:N,9:A:N,10:B:N,11:A:N,12:B:N,13:B:N,14:A:N,15:B:N,16:B:N,17:B:N,18:B:N,19:C:N,20:A:N', 14, '70.00', '500.00', '2022-06-15 21:50:00', '2022-06-15 22:50:00', 'N'),
+(9, 1, 36, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:B:N,2:C:N,3:A:N,4:A:N,5:B:N,6:A:N,7:C:N,8:C:N,9:A:N,10:B:N,11:A:N,12:B:N,13:B:N,14:A:N,15:B:N,16:B:N,17:B:N,18:C:N,19:B:N,20:A:N', 18, '90.00', '500.00', '2022-06-15 21:50:39', '2022-06-15 22:50:39', 'N'),
+(10, 1, 38, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:A:N,2:C:N,3:B:N,4:B:N,5:A:N,6:B:N,7:B:N,8:B:N,9:C:N,10:B:N,11:C:N,12:B:N,13:B:N,14:C:N,15:B:N,16:C:N,17:B:N,18:D:N,19:E:N,20:D:N', 7, '35.00', '500.00', '2022-06-15 21:50:48', '2022-06-15 22:50:48', 'N'),
+(11, 1, 44, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:A:N,2:A:N,3:A:N,4:A:N,5:A:N,6:A:N,7:C:N,8:C:N,9:A:N,10:B:N,11:A:N,12:B:N,13:A:N,14:A:N,15:B:N,16:B:N,17:B:N,18:C:N,19:B:N,20:A:N', 15, '75.00', '500.00', '2022-06-15 21:51:13', '2022-06-15 22:51:13', 'N'),
+(12, 1, 46, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:C:N,2:C:N,3:B:N,4:C:N,5:C:N,6:B:N,7:A:N,8:B:N,9:C:N,10:B:N,11:B:N,12:C:N,13:C:N,14:B:N,15:C:N,16:B:N,17:C:N,18:B:N,19:C:N,20::N', 4, '20.00', '500.00', '2022-06-15 21:51:18', '2022-06-15 22:51:18', 'N'),
+(13, 1, 37, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:C:N,2:A:N,3:A:N,4:A:N,5:B:N,6:A:N,7:C:N,8:C:N,9:A:N,10:B:N,11:C:N,12:C:N,13:C:N,14:C:N,15:C:N,16:C:N,17:C:N,18:C:N,19:C:N,20:C:N', 7, '35.00', '500.00', '2022-06-15 21:51:40', '2022-06-15 22:51:40', 'N'),
+(14, 1, 50, '1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20', '1:D:N,2:C:N,3:A:N,4:A:N,5:B:N,6:A:N,7:C:N,8:C:N,9:A:N,10:B:N,11:A:N,12:B:N,13:B:N,14:A:N,15:B:N,16:B:N,17:A:N,18:C:N,19:B:N,20:A:N', 16, '80.00', '500.00', '2022-06-15 21:55:10', '2022-06-15 22:55:10', 'N');
 
 -- --------------------------------------------------------
 
@@ -199,28 +213,17 @@ CREATE TABLE `login_attempts` (
 --
 
 INSERT INTO `login_attempts` (`id`, `ip_address`, `login`, `time`) VALUES
-(2, '::1', 'admin', 1655213426),
-(3, '::1', 'Administrator', 1655213445),
-(4, '::1', 'Administrator', 1655213452),
-(5, '::1', 'administrator', 1655213456),
-(6, '::1', '1122334444', 1655213987),
-(7, '::1', 'zrpratama7@gmail.com', 1655214165),
-(8, '::1', 'zrpratama7@gmail.com', 1655214170),
-(9, '::1', 'zrpratama7@gmail.com', 1655214175),
-(10, '::1', 'dosen@gmail.com', 1655214239),
-(11, '::1', '04042001', 1655214249),
-(12, '::1', 'kakasi', 1655214287),
-(13, '::1', 'kakasi', 1655214288),
-(14, '::1', 'kakasi', 1655214289),
-(15, '::1', 'dosen@gmail.com', 1655214311),
-(16, '::1', 'dosen@gmail.com', 1655214321),
-(17, '::1', 'dosen@gmail.com', 1655215567),
-(20, '::1', 'dosen@gmail.com', 1655216672),
-(21, '::1', 'dosen@gmail.com', 1655216674),
-(22, '::1', 'dosen@gmail.com', 1655216678),
-(24, '::1', 'bungar@kkn.com', 1655223904),
-(25, '::1', 'bungar@kkn.com', 1655223913),
-(26, '::1', 'bungar@kkn.com', 1655223997);
+(30, '::1', 'bagus@kkn.com', 1655278307),
+(31, '::1', 'bagus@kkn.com', 1655278324),
+(32, '::1', 'bagus@kkn.com', 1655278345),
+(33, '::1', 'mzidan@kkn.com', 1655278624),
+(35, '::1', 'rizky@kkn.co', 1655279161),
+(42, '::1', 'admi@admin.com', 1655303844),
+(43, '172.16.80.1', 'taufiknurrahman88@gmail.com', 1655304246),
+(44, '::1', 'gurusd@kkn.com', 1655304251),
+(45, '172.16.80.1', 'iqbal@kkn.com', 1655304345),
+(46, '172.16.80.1', 'iqbal@kkn.com', 1655304375),
+(47, '172.16.80.1', 'iqbal@kkn.com', 1655304431);
 
 -- --------------------------------------------------------
 
@@ -242,9 +245,55 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id_mahasiswa`, `nama`, `nim`, `email`, `jenis_kelamin`, `kelas_id`) VALUES
-(2, 'M. ZIDAN AL HAFIZH', '18082013', 'mzidanah@kkn.com', 'L', 1),
-(3, 'BUNGA ROSALITA', '31032012', 'bungar@kkn.com', 'P', 1),
-(4, 'FABIO DIEGO PUTRA', '14062012', 'fabiodp@kkn.com', 'L', 1);
+(4, 'Saya Siswa SD', '0102030405', 'siswasd@kkn.com', 'L', 1),
+(5, 'M. ZIDAN AL HAFIZH', '18082013', 'zidan@kkn.com', 'L', 1),
+(6, 'BUNGA ROSALITA', '31032013', 'bunga@kkn.com', 'P', 1),
+(7, 'FABIO DIEGO PUTRA', '14062012', 'fabio@kkn.com', 'L', 1),
+(8, 'VIA DWI SAFIRA', '21032011', 'via@kkn.com', 'P', 1),
+(9, 'FAIZAL FARDANI', '10092006', 'faizal@kkn.com', 'L', 2),
+(10, 'MUHAMMAD DWI ALI', '08112006', 'mdwi@kkn.com', 'L', 2),
+(11, 'KRISNA SAYYIDANA PRIANTO', '28042006', 'krisna@kkn.com', 'L', 2),
+(12, 'SHAFABIE SALSABELLA PRIANTO', '27022009', 'shafabie@kkn.com', 'P', 1),
+(13, 'SALWA BAHITY OVY PRIANTO', '10092010', 'salwa@kkn.com', 'P', 1),
+(14, 'ERNAWATI', '28022012', 'ernawati@kkn.com', 'P', 1),
+(15, 'MAYLANI REVALIA', '26052013', 'maylani@kkn.com', 'P', 1),
+(16, 'KIRANIA SHALINA PUTRI', '13072008', 'kirania@kkn.com', 'P', 1),
+(17, 'ALIF ARVIANSYAH', '28052013', 'alif@kkn.com', 'L', 1),
+(18, 'DZAKIRA ALMEERA PUTRI ARDIANA', '29102012', 'dzakira@kkn.com', 'P', 1),
+(19, 'YOGA SAPUTRA', '22042010', 'yoga@kkn.com', 'L', 1),
+(20, 'YOLA SAPUTRI', '220420100', 'yola@kkn.com', 'P', 1),
+(21, 'AQILA NAVIZA ZAHRA', '20052013', 'aqila@kkn.com', 'P', 1),
+(22, 'FARA AMELIA NATASHA', '13032009', 'fara@kkn.com', 'P', 1),
+(23, 'DWI RATNA SARI', '08052008', 'dwi@kkn.com', 'P', 1),
+(24, 'ADINDA ZASKIA NURHABIBAH', '24122009', 'adinda@kkn.com', 'P', 1),
+(25, 'JIHAN MUJAZARA HERAWATI', '04062013', 'jihan@kkn.com', 'P', 1),
+(26, 'ANINDI NOVITA ANDRIANI', '11122014', 'anindi@kkn.com', 'P', 1),
+(27, 'MOCH. RASYA RAMADHAN', '27082009', 'mrasya@kkn.com', 'L', 1),
+(28, 'SHABILLA KHANZANIA AZZAHWA', '22072013', 'shabilla@kkn.com', 'P', 1),
+(29, 'YEMIMA KEZIA PRAMUDITA PRAMONO', '28042008', 'yemima@kkn.com', 'P', 1),
+(30, 'JOHANA ARETHA PUTRI PRAMONO', '01072012', 'johana@kkn.com', 'P', 1),
+(31, 'ANINDA SAFATUS ZAHRA', '09102009', 'aninda@kkn.com', 'P', 1),
+(32, 'NAFISA MUTIARA WIBOWO', '19082014', 'nafisa@kkn.com', 'P', 1),
+(33, 'THALITA ANGELINA PUTRI RAMADHANI', '24072012', 'thalita@kkn.com', 'P', 1),
+(34, 'REFHAN FAICHAL PUTRA PURNAMA', '23062010', 'refhan@kkn.com', 'L', 2),
+(35, 'Saya Siswa SMP', '010203040506', 'siswasmp@kkn.com', 'L', 2),
+(36, 'TAUFIK NUR RAHMAN', '19071020', 'taufik@kkn.com', 'L', 1),
+(37, 'REZA NOER SYAFA\' AH', '19071006', 'reza@kkn.com', 'P', 1),
+(38, 'IKA ALIYATUR ROFI\' AH', '19071003', 'ika@kkn.com', 'P', 1),
+(39, 'MEOKBUN WIHELMINA ANASTASYA', '19071008', 'meokbun@kkn.com', 'P', 1),
+(41, 'VIO JHONDAN PRASETIO', '19053010', 'vio@kkn.com', 'L', 1),
+(43, 'DIAZ DAITA LARAS', '19071005', 'diaz@kkn.com', 'P', 1),
+(44, 'SALSABYLA QURROTUN A\' YUN', '19071019', 'salsabyla@kkn.com', 'P', 1),
+(45, 'IRZA PUTRA ALAMSYAH', '19053022', 'irza@kkn.com', 'L', 1),
+(46, 'MOCHAMAD IQBAL ROMADHON', '19071021', 'miqbal@kkn.com', 'L', 1),
+(47, 'SITI FATIMAH', '19071002', 'siti@kkn.com', 'P', 1),
+(48, 'ALIP NUR LAILA', '19071001', 'alip@kkn.com', 'P', 1),
+(49, 'WHISTLER RAKA PRATAMA L', '19053034', 'raka@kkn.com', 'L', 1),
+(50, 'MARTHA LIAM', '19071010', 'martha@kkn.com', 'P', 1),
+(51, 'NURMA YUNITA', '19053006', 'nurmay@kkn.com', 'P', 1),
+(53, 'BAGUS SETYAWAN', '19053033', 'baguss@kkn.com', 'L', 1),
+(54, 'MOHAMMAD RIZKY', '19053020', 'rizky@kkn.com', 'L', 1),
+(56, 'Shelly A', '010101001', 'shelly@kkn.com', 'L', 1);
 
 -- --------------------------------------------------------
 
@@ -289,7 +338,9 @@ CREATE TABLE `m_ujian` (
 --
 
 INSERT INTO `m_ujian` (`id_ujian`, `dosen_id`, `matkul_id`, `nama_ujian`, `jumlah_soal`, `waktu`, `jenis`, `tgl_mulai`, `terlambat`, `token`) VALUES
-(1, 1, 1, 'Trial Error Pre Test SD', 20, 60, 'urut', '2022-06-14 05:23:47', '2022-06-16 23:23:59', 'UHRKM');
+(1, 1, 1, 'Trial Error Pre Test SD', 20, 60, 'urut', '2022-06-14 05:23:47', '2022-06-16 23:23:59', 'UHRKM'),
+(2, 2, 2, 'Trial Error Pre Test SMP', 20, 60, 'urut', '2022-06-15 13:03:23', '2022-06-16 13:03:28', 'IVXCS'),
+(3, 1, 1, 'NN', 2, 5, 'acak', '2022-06-15 20:50:26', '2022-06-16 20:50:28', 'QBEPR');
 
 -- --------------------------------------------------------
 
@@ -344,7 +395,27 @@ INSERT INTO `tb_soal` (`id_soal`, `dosen_id`, `matkul_id`, `bobot`, `file`, `tip
 (17, 1, 1, 5, '', '', '<p>The day after Sunday is ... </p>', '<p>Thursday</p>', '<p>Monday</p>', '<p>Friday</p>', '', '', '', '', '', '', '', 'B', 1655223691, 1655225580),
 (18, 1, 1, 5, '', '', '<p><span lang=\"EN-ID\" xss=removed>Today is Wednesday. In Indonesia is ….  </span><br></p>', '<p><span lang=\"EN-ID\" xss=removed>Hari ini hari Senin       </span><br></p>', '<p><span lang=\"EN-ID\" xss=removed>Hari ini hari Selasa</span><br></p>', '<p><span lang=\"EN-ID\" xss=removed>Hari ini hari Rabu</span><br></p>', '', '', '', '', '', '', '', 'C', 1655223738, 1655223738),
 (19, 1, 1, 5, '', '', '<p><span xss=removed>My brother is playing football in the ………  </span><br></p>', '<p>Mall</p>', '<p>Field</p>', '<p>Swimming pool</p>', '', '', '', '', '', '', '', 'B', 1655223768, 1655223768),
-(20, 1, 1, 5, '', '', '<p><span xss=removed>Alfiansyah is taking a bath in the ……………   </span><br></p>', '<p>Bathroom</p>', '<p>Bedroom</p>', '<p>Kitchen</p>', '', '', '', '', '', '', '', 'A', 1655223799, 1655223799);
+(20, 1, 1, 5, '', '', '<p><span xss=removed>Alfiansyah is taking a bath in the ……………   </span><br></p>', '<p>Bathroom</p>', '<p>Bedroom</p>', '<p>Kitchen</p>', '', '', '', '', '', '', '', 'A', 1655223799, 1655223799),
+(21, 2, 2, 5, '', '', '<p class=\"MsoNormal\"><b><span xss=removed>Listening\r\nSection:<o></o></span></b></p><p class=\"MsoNormal\"><span xss=removed> </span></p><p class=\"MsoNormal\"><span xss=removed>Choose the correct words to complete the dialogue\r\nbelow.<o></o></span></p><p>\r\n\r\n\r\n\r\n\r\n\r\n</p><p class=\"MsoNormal\"><span xss=removed>Indra is in the school library.</span></p><p class=\"MsoNormal\"><span xss=removed><o><br></o></span></p><p class=\"MsoNormal\"><span xss=removed><o><br></o></span></p><p class=\"MsoNormal\"><span xss=removed><o><br></o></span></p><p class=\"MsoNormal\"><span xss=removed><o></o></span></p><p class=\"MsoListParagraph\" xss=removed><span xss=removed>The correct words to complete the dialogue\r\nabove is...<o></o></span></p>', '<p><span xss=removed>Good afternoon.</span><br></p>', '<p>Good morning</p>', '<p>Good evening</p>', '<p>Good night</p>', '', '', '', '', '', '', 'B', 1655260652, 1655260652),
+(22, 2, 2, 5, '', '', '<p class=\"MsoNormal\"><b><span xss=removed>Listening\r\nSection:<o></o></span></b></p><p class=\"MsoNormal\"><span xss=removed> </span></p><p>\r\n\r\n\r\n\r\n</p><p class=\"MsoNormal\"><span xss=removed>Choose the correct words to complete the dialogue\r\nbelow.</span></p><p class=\"MsoNormal\"><span xss=removed><o><br></o></span></p><p class=\"MsoNormal\"><span xss=removed><o><span xss=removed>What is the title of the text?</span><br></o></span></p>', '<p><span xss=removed>Rabbits are very funny</span><br></p>', '<p><span xss=removed>My Animal </span><br></p>', '<p>My favorite</p>', '<p><span xss=removed>Rabbit</span><br></p>', '', '', '', '', '', '', 'C', 1655260744, 1655260744),
+(23, 2, 2, 5, '', '', '<p class=\"MsoListParagraph\" xss=removed><span xss=removed>The correct answer to complete the\r\ndialogue above is...<o></o></span></p>', '<p><span xss=removed>I don\'t want to finish</span><br></p>', '<p><span xss=removed>I must not finish</span><br></p>', '<p>I have to finish</p>', '<p><span xss=removed>I can finish</span><br></p>', '', '', '', '', '', '', 'C', 1655260938, 1655260938),
+(24, 2, 2, 5, '', '', '<p class=\"MsoListParagraph\" xss=removed><span xss=removed>The correct answer to complete the\r\ndialogue above is...<o></o></span></p>', '<p><span xss=removed>you must go to bed late</span><br></p>', '<p><span xss=removed>you must go to bed soon</span><br></p>', '<p><span xss=removed>you should not go to bed</span><br></p>', '<p><span xss=removed>you should go to bed late</span><br></p>', '', '', '', '', '', '', 'B', 1655260981, 1655260981),
+(25, 2, 2, 5, '', '', '<p class=\"MsoNormal\"><span xss=removed> </span></p><p>\r\n\r\n</p><table class=\"MsoTableGrid\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" xss=removed><p>\r\n <tbody><tr xss=removed>\r\n  <td width=\"623\" valign=\"top\" xss=removed>\r\n  <p class=\"MsoNormal\" xss=removed><span xss=removed>Happy\r\n  Parent Day!<br>\r\n  <br>\r\n  From a small girl until I grew up. From knowing nothing until I become smart.\r\n  From dependent until I’m independent. When I’m good and bad, you are always\r\n  there for me. You never leave me alone. I’m so grateful!<br>\r\n  <br>\r\n  Thank you, Mom and Dad!<o></o></span></p>\r\n  </td>\r\n </tr>\r\n</tbody></p><p><tbody><span xss=removed>Who sent the card?</span><br></tbody></p></table>', '<p>A Daughter</p>', '<p>A son</p>', '<p>Mother</p>', '<p>Father</p>', '', '', '', '', '', '', 'A', 1655261049, 1655261049),
+(26, 2, 2, 5, '', '', '<p class=\"MsoListParagraph\" xss=removed><span xss=removed>The cows drink…<o></o></span></p>', '<p><span xss=removed>Milk </span><br></p>', '<p><span xss=removed>Grass juice</span><br></p>', '<p>Water</p>', '<p><font face=\"Times New Roman, serif\"><span xss=removed>Watermelon</span></font></p>', '', '', '', '', '', '', 'C', 1655261108, 1655261108),
+(27, 2, 2, 5, '', '', '<p class=\"MsoListParagraphCxSpFirst\" xss=removed><span xss=removed>Rearrange the text below!</span><span xss=removed> </span></p><p class=\"MsoListParagraphCxSpFirst\" xss=removed><span xss=removed>your\r\n- what\'s - name</span></p>', '<p>What\'s your name</p>', '<p><span xss=removed>Your name what\'s</span><br></p>', '<p><span xss=removed>What\'s name your</span><br></p>', '<p><span xss=removed>Name what\'s your</span><br></p>', '', '', '', '', '', '', 'A', 1655261184, 1655261184),
+(28, 2, 2, 5, '', '', '<p class=\"MsoNormal\"><span xss=\"removed\">Mr. Fahri is very happy. The rainy season of this year\r\nmakes the farm beautiful. It is planting time. Rice fields become fresh and\r\ngreen during this season and by the end of this season Mr. Fahri is ready to\r\nharvest his crops.<o></o></span></p><p class=\"MsoNormal\"><span xss=\"removed\">Mr. Fahri ploughs the land at the beginning of the\r\nrainy season. Then, he usually works early and finishes at noon. Milking the\r\ncows, feeding the livestock, and cleaning the barns are among Mr. Fahri’s\r\nduties before breakfast. He does most of the hard outdoor work by himself.</span></p><p class=\"MsoNormal\"><span xss=\"removed\"><br></span>What is a farm like\r\nduring the rainy season?</p>', '<p>Beautiful</p>', '<p>Happy</p>', '<p>Cloudly</p>', '<p>Rain</p>', '', '', '', '', '', '', 'A', 1655261241, 1655262375),
+(29, 2, 2, 5, '', '', '<p class=\"MsoNormal\"><span xss=\"removed\">Mr. Fahri is very happy. The rainy season of this year\r\nmakes the farm beautiful. It is planting time. Rice fields become fresh and\r\ngreen during this season and by the end of this season Mr. Fahri is ready to\r\nharvest his crops.<o></o></span></p><p class=\"MsoNormal\"><span xss=\"removed\">Mr. Fahri ploughs the land at the beginning of the\r\nrainy season. Then, he usually works early and finishes at noon. Milking the\r\ncows, feeding the livestock, and cleaning the barns are among Mr. Fahri’s\r\nduties before breakfast. He does most of the hard outdoor work by himself.</span></p><p class=\"MsoNormal\"><span xss=\"removed\"><br></span>When does Mr. Fahri’s workday end?</p>', '<p><span xss=removed>Morning</span><br></p>', '<p><span xss=removed>Night   </span><br></p>', '<p><span xss=removed>Early morning</span><br></p>', '<p>Noon</p>', '', '', '', '', '', '', 'D', 1655261279, 1655262392),
+(30, 2, 2, 5, '67123ca3bd3e0aff97ede6d3c3028b3a.PNG', 'image/png', '<p class=\"MsoListParagraph\" xss=removed><span xss=removed>Look at the picture</span></p><p class=\"MsoListParagraph\" xss=removed><span xss=removed><o><br></o></span></p><p class=\"MsoListParagraph\" xss=removed><span xss=removed><o></o></span></p><p class=\"MsoListParagraph\" xss=removed><span xss=removed>The\r\ncorrect greeting based on the picture is . . .<o></o></span></p>', '<p><span xss=removed>Good afternoon.</span><br></p>', '<p>Good morning</p>', '<p>Good evening</p>', '<p>Good night</p>', '', '', '', '', '', '', 'B', 1655261373, 1655261373),
+(31, 2, 2, 5, '', '', '<p class=\"MsoListParagraphCxSpFirst\" xss=\"removed\"><span xss=\"removed\">Faiz and Rizqi is in the cinema to watch a\r\nmovie. Suddenly they meets Aji, Friend of Faiz outside of the cinema.<o></o></span></p><p class=\"MsoListParagraphCxSpMiddle\" xss=\"removed\"><span xss=\"removed\"> </span></p><p class=\"MsoListParagraphCxSpMiddle\" xss=\"removed\"><span xss=\"removed\">Faiz:\r\nHello Aji, Good Afternoon.<o></o></span></p><p class=\"MsoListParagraphCxSpMiddle\" xss=\"removed\"><span xss=\"removed\">Aji:\r\nGood Afternoon, Faiz (11)……………………..?<o></o></span></p><p class=\"MsoListParagraphCxSpMiddle\" xss=\"removed\"><span xss=\"removed\">Faiz:\r\nI’m fine thank you and how about you?<o></o></span></p><p class=\"MsoListParagraphCxSpMiddle\" xss=\"removed\"><span xss=\"removed\"> </span></p><p>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n</p><p class=\"MsoListParagraphCxSpLast\" xss=\"removed\"><span xss=\"removed\">Fill\r\nthe blank space in the dialogue above!<o></o></span></p>', '<p><span xss=removed>Nice to meet you</span><br></p>', '<p><span xss=removed>Where are you?</span><br></p>', '<p>How are you?</p>', '<p><span xss=removed>Glad to see you</span><br></p>', '', '', '', '', '', '', 'C', 1655261423, 1655262405),
+(32, 2, 2, 5, '', '', '<p class=\"MsoListParagraph\" xss=\"removed\"><span xss=\"removed\">It’s nine o’clock in the night. Gia will\r\ngo to sleep. He says……. to his parents<o></o></span></p>', '<p><span xss=removed>Good bye</span><br></p>', '<p>Good night</p>', '<p>See you</p>', '<p><span xss=removed>Good Afternoon</span><br></p>', '', '', '', '', '', '', 'B', 1655261472, 1655262415),
+(33, 2, 2, 5, '', '', '<p class=\"MsoListParagraphCxSpFirst\" xss=\"removed\"><span xss=\"removed\">Ani: Happy birthday, Wina! Here is a\r\npresent for you.<o></o></span></p><p>\r\n\r\n</p><p class=\"MsoListParagraphCxSpLast\" xss=\"removed\"><span xss=\"removed\">Wina:\r\n. . .<o></o></span></p>', '<p><span xss=removed>Wow, you look beautiful!</span><br></p>', '<p><span xss=removed>Welcome to my house, Ani</span><br></p>', '<p><span xss=removed><font color=\"#000000\" xss=removed>Thank you. That’s very kind\r\nof you.</font></span><br></p>', '<p class=\"MsoListParagraph\" xss=removed><span xss=removed>Your\r\npresent must be expen<o></o></span></p>', '', '', '', '', '', '', 'C', 1655261524, 1655262422),
+(34, 2, 2, 5, '', '', '<p class=\"MsoListParagraphCxSpFirst\" xss=\"removed\"><span xss=\"removed\">X: I\'m leaving to go camping in Bantir his\r\nweekend.</span></p><p class=\"MsoListParagraphCxSpFirst\" xss=\"removed\"><span xss=\"removed\">Y:\r\nWell, I think you . . . take a raincoat with you. It\'s the rainy season now.</span></p><p class=\"MsoListParagraphCxSpFirst\" xss=\"removed\"><span xss=\"removed\">X:\r\nYou\'re right.</span></p><p class=\"MsoListParagraphCxSpMiddle\" xss=\"removed\"><span xss=\"removed\"> </span></p><p>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n</p><p class=\"MsoListParagraphCxSpLast\" xss=\"removed\"><span xss=\"removed\">Fill\r\nthe blank space in the dialogue above!<o></o></span></p>', '<p>should</p>', '<p><span xss=removed>must not</span><br></p>', '<p><span xss=removed>should not</span><br></p>', '<p><span xss=removed>don\'t have</span><br></p>', '', '', '', '', '', '', 'A', 1655261576, 1655262362),
+(35, 2, 2, 5, '96a2eb2046f92151246c1a2919aea74c.PNG', 'image/png', '<p class=\"MsoListParagraph\" xss=removed><span xss=removed>What does the notice mean?<o></o></span></p>', '<p><span xss=removed>People aren\'t permitted to\r\nthrow rubbish here.</span><br></p>', '<p><span xss=removed>People can get gasoline for their cars here.</span><br></p>', '<p class=\"MsoNormal\" xss=removed><span xss=removed>People must be careful\r\nwith their hands.<o></o></span></p>', '', '', '', '', '', '', '', 'A', 1655261653, 1655261653),
+(36, 2, 2, 5, '', '', '<p class=\"MsoListParagraphCxSpFirst\" xss=\"removed\"><span xss=\"removed\">\"<b>DO\r\nNOT FEED THE ANIMALS</b>\"<o></o></span></p><p>\r\n\r\n</p><p class=\"MsoListParagraphCxSpLast\" xss=\"removed\"><span xss=\"removed\">From\r\nthe text, we can conclude that we . . . feed the animals.<o></o></span></p>', '<p><span xss=removed>must </span><br></p>', '<p><span xss=removed>should</span><br></p>', '<p>must not</p>', '<p><span xss=removed>don\'t have to</span><br></p>', '', '', '', '', '', '', 'C', 1655262246, 1655262338),
+(37, 2, 2, 5, '', '', '<p class=\"MsoNormal\"><span xss=\"removed\"> </span></p><p>\r\n\r\n</p><div align=\"center\">\r\n\r\n<table class=\"MsoNormalTable\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" width=\"0\" xss=\"removed\">\r\n <tbody><tr>\r\n  <td xss=\"removed\">\r\n  <p class=\"MsoNormal\"><span xss=\"removed\">Dear Ariani<br>\r\n  <br>\r\n  Congratulations on your winning at the regional chess competition!<br>\r\n  Your hard work has been paid off.<br>\r\n  Wishing you get the best result in the higher competition.<br>\r\n  Good luck!<br>\r\n  <br>\r\n  Samson<o></o></span></p>\r\n  </td>\r\n </tr>\r\n</tbody></table></div><div align=\"center\"><br><table class=\"MsoNormalTable\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" width=\"0\" xss=\"removed\"><tbody></tbody></table>Why does Samson send the greeting card?</div><div align=\"center\"><table class=\"MsoNormalTable\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" width=\"0\" xss=\"removed\"><tbody></tbody></table>\r\n\r\n</div>', '<p><span xss=removed>To compliment Ariani on her success.</span><br></p>', '<p><span xss=removed>To congratulate Ariani on\r\nher winning.</span><br></p>', '<p><span xss=removed>To encourge Ariani to be successful.</span><br></p>', '<p><span xss=removed>To wish Ariani win in the higher competition</span><br></p>', '', '', '', '', '', '', 'B', 1655262316, 1655262329),
+(38, 2, 2, 5, '', '', '<div align=\"center\"><table class=\"MsoNormalTable\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" width=\"0\" xss=\"removed\">\r\n <tbody><tr>\r\n  <td xss=\"removed\">\r\n  <p class=\"MsoNormal\"><span xss=\"removed\">Dear Ariani<br>\r\n  <br>\r\n  Congratulations on your winning at the regional chess competition!<br>\r\n  Your hard work has been paid off.<br>\r\n  Wishing you get the best result in the higher competition.<br>\r\n  Good luck!<br>\r\n  <br>\r\n  Samson<o></o></span></p>\r\n  </td>\r\n </tr>\r\n</tbody></table></div><div align=\"center\"><br><table class=\"MsoNormalTable\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" width=\"0\" xss=\"removed\"><tbody></tbody></table></div><div align=\"center\"><table class=\"MsoNormalTable\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" width=\"0\" xss=\"removed\"><tbody></tbody></table></div><div align=\"center\"><table class=\"MsoNormalTable\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" width=\"0\" xss=\"removed\"><tbody></tbody></table></div><div align=\"center\"><span xss=\"removed\">How does Samson probably fell when giving the greeting card to Ariani?</span><br>\r\n\r\n</div>', '<p>Proud</p>', '<p><span xss=removed>Anxious</span><br></p>', '<p><span xss=removed>Amused</span><br></p>', '<p><span xss=removed>Surprised</span><br></p>', '', '', '', '', '', '', 'A', 1655262502, 1655262556),
+(39, 2, 2, 5, '', '', '<p class=\"MsoNormal\"><span xss=\"removed\"> </span></p><p>\r\n\r\n</p><div align=\"center\">\r\n\r\n<table class=\"MsoNormalTable\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" width=\"0\" xss=\"removed\">\r\n <tbody><tr>\r\n  <td xss=\"removed\">\r\n  <p class=\"MsoNormal\"><span xss=\"removed\">Dear my best friend, Futu.<br>\r\n  <br>\r\n  Now you are turning 23.<br>\r\n  Wishing your birthday full of joy and wonderful memories.<br>\r\n  <b>Happy Birthday!</b><br>\r\n  May you have a healthy and long life and grab the bright future!<br>\r\n  <br>\r\n  Vandra<o></o></span></p>\r\n  </td>\r\n </tr>\r\n</tbody></table></div><div align=\"center\"><span xss=\"removed\">Vandra writes the text in order to …..</span><br>\r\n\r\n</div>', '<p><span xss=removed>thank</span><br></p>', '<p><span xss=removed>apologise</span><br></p>', '<p><span xss=removed>compliment</span><br></p>', '<p>congratulate</p>', '', '', '', '', '', '', 'D', 1655262612, 1655262630),
+(40, 2, 2, 5, '', '', '<p class=\"MsoNormal\"><span xss=removed> </span></p><p>\r\n\r\n</p><div align=\"center\">\r\n\r\n<table class=\"MsoNormalTable\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" width=\"0\" xss=removed>\r\n <tbody><tr>\r\n  <td xss=removed>\r\n  <p class=\"MsoNormal\"><span xss=removed>Dear my best friend, Futu.<br>\r\n  <br>\r\n  Now you are turning 23.<br>\r\n  Wishing your birthday full of joy and wonderful memories.<br>\r\n  <b>Happy Birthday!</b><br>\r\n  May you have a healthy and long life and grab the bright future!<br>\r\n  <br>\r\n  Vandra<o></o></span></p>\r\n  </td>\r\n </tr>\r\n</tbody></table></div><div align=\"center\"><table class=\"MsoNormalTable\" border=\"1\" cellspacing=\"0\" cellpadding=\"0\" width=\"0\" xss=removed><tbody><span xss=removed>What is the relationship between Vandra and Futu?</span><br></tbody></table>\r\n\r\n</div>', '<p><span xss=removed>Siblings</span><br></p>', '<p><span xss=removed>A very close friend</span><br></p>', '<p><span xss=removed>Pen pals</span><br></p>', '<p><span xss=removed>Schoolmates</span><br></p>', '', '', '', '', '', '', 'B', 1655262674, 1655262674);
 
 -- --------------------------------------------------------
 
@@ -379,13 +450,59 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `email`, `activation_selector`, `activation_code`, `forgotten_password_selector`, `forgotten_password_code`, `forgotten_password_time`, `remember_selector`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'Administrator', '$2y$12$tGY.AtcyXrh7WmccdbT1rOuKEcTsKH6sIUmDr0ore1yN4LnKTTtuu', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1655254827, 1, 'Admin', 'Istrator', 'ADMIN', '0'),
-(18, '::1', '12345678', '$2y$10$RXFI89vqlDmUnZigr6GrUO0C9T0Ces1KrisXEUH2wBsuQIW66VKRO', 'gurusd@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655222041, 1655222087, 1, 'Guru', 'SD', NULL, NULL),
-(19, '::1', '123456789', '$2y$10$y01c7SV.BXJMD.RmOVqyn.rHC1Cr1oVgbkEbfaKVmYpEAGaJsOqRO', 'gurusmp@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655222044, NULL, 1, 'Guru', 'SMP', NULL, NULL),
-(20, '::1', '18082012', '$2y$10$6MSnmC12CKjxHhggI/TbnudKUJ3tw4TRrD70fkzUKX7AiI7.TwOr6', 'zidanah@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655222229, NULL, 1, 'M.', 'HAFIZH', NULL, NULL),
-(21, '::1', '14062012', '$2y$10$HsczY1NuSNuNv9pYQwTeCe.QOp31b9u5PDiQEHTr/cCVaO24qRTIW', 'fabiodp@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655224065, 1655224219, 1, 'FABIO', 'PUTRA', NULL, NULL),
-(22, '::1', '18082013', '$2y$10$45uoaeeOyflFYy5fhQQkR.TVK.U/HJLQkvJh4wbBGGOuXMkh.OwjG', 'mzidanah@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655224067, NULL, 1, 'M.', 'HAFIZH', NULL, NULL),
-(23, '::1', '31032012', '$2y$10$YFfMSO1lYE93YeFp8adtBeSgsImNsgrzGy1Pl1CnqTRWBSh8Bp5kq', 'bungar@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655224068, NULL, 1, 'BUNGA', 'ROSALITA', NULL, NULL);
+(1, '127.0.0.1', 'Administrator', '$2y$12$tGY.AtcyXrh7WmccdbT1rOuKEcTsKH6sIUmDr0ore1yN4LnKTTtuu', 'admin@admin.com', NULL, '', NULL, NULL, NULL, NULL, NULL, 1268889823, 1655341390, 1, 'Admin', 'Istrator', 'ADMIN', '0'),
+(19, '::1', '123456789', '$2y$10$y01c7SV.BXJMD.RmOVqyn.rHC1Cr1oVgbkEbfaKVmYpEAGaJsOqRO', 'gurusmp@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655222044, 1655278375, 1, 'Guru', 'SMP', NULL, NULL),
+(24, '::1', '12345678', '$2y$10$0TBECYkDuUg8hKk2jmwkwOUnLa1xNjRI7GM0tKqjut8LLutYNTpKW', 'gurusd@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655258259, 1655304105, 1, 'Guru', 'SD', NULL, NULL),
+(25, '::1', '01072012', '$2y$10$0Ymyd4y07byg7kk6rt7BduyBnHrhcuvj55VTzz9zoZyAcTaBluAPK', 'johana@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259947, NULL, 1, 'JOHANA', 'PRAMONO', NULL, NULL),
+(26, '::1', '04062013', '$2y$10$PDvmYqkf5.Sl/wdYunhjM.REDrIxlEGWDKD9JUvwdGmxoOGK1gaBK', 'jihan@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259949, NULL, 1, 'JIHAN', 'HERAWATI', NULL, NULL),
+(27, '::1', '08052008', '$2y$10$eHSjU7fSY6q9DPnV1EY/w.ZkGcATkPK42DXHw0JJavoLPAFXqLJg2', 'dwi@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259951, NULL, 1, 'DWI', 'SARI', NULL, NULL),
+(28, '::1', '08112006', '$2y$10$zrhc7Z.eL4jrwuIxQXe42OJUzNbCuBM139xFgCVe7xoyVt6KAXrIm', 'mdwi@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259952, NULL, 1, 'MUHAMMAD', 'ALI', NULL, NULL),
+(29, '::1', '09102009', '$2y$10$518XE6SlsuiLYET.5xM.S.UVF9.z3r.vYmCH4n4aN6T6dFQDDpVxi', 'aninda@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259955, NULL, 1, 'ANINDA', 'ZAHRA', NULL, NULL),
+(30, '::1', '10092006', '$2y$10$t9cJj5nlcyiDplX0NSpAYOteHCfxQTCvAhLyOmMcvfJu7jdru.x1u', 'faizal@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259956, NULL, 1, 'FAIZAL', 'FARDANI', NULL, NULL),
+(31, '::1', '10092010', '$2y$10$xzEq.XI3.2IzCyg/cVOfYOZ/YT.vZUU/vf9AoXhNnt7tnR294ALfu', 'salwa@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259957, NULL, 1, 'SALWA', 'PRIANTO', NULL, NULL),
+(32, '::1', '11122014', '$2y$10$NlJ//wLAXkwcmzLNplCZX.W.Jzpi65T9/iP17ijSPDMceylt22ube', 'anindi@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259958, NULL, 1, 'ANINDI', 'ANDRIANI', NULL, NULL),
+(33, '::1', '13032009', '$2y$10$jK4y4VbOgv2rnFP55j/bpe8KjXb9IeeGs5E5Xh/DPHqzOCkOzO3sm', 'fara@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259960, NULL, 1, 'FARA', 'NATASHA', NULL, NULL),
+(34, '::1', '13072008', '$2y$10$oy5UFmo9sC8cWFUgL6tPM.uHxHjGEuqRx/dK6slayDUTm9mCqL5wq', 'kirania@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259961, NULL, 1, 'KIRANIA', 'PUTRI', NULL, NULL),
+(35, '::1', '14062012', '$2y$10$mTmCxVoucPY6YRPPszS9/OD7bjCRZptpsVHDp3Sgi1ceEtSmokINu', 'fabio@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259962, NULL, 1, 'FABIO', 'PUTRA', NULL, NULL),
+(36, '::1', '18082013', '$2y$10$41TAmGPuIjdwWe9wmuLKzeQ6jp6F0NJaCvzU//W4U9cqY307uS5x.', 'zidan@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259963, 1655278642, 1, 'M.', 'HAFIZH', NULL, NULL),
+(37, '::1', '19082014', '$2y$10$RJN.S65BK8MDdOOfwCAPs.fNk2LgoEVoqBu4Zz8K4iDIDM3FpfN2y', 'nafisa@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259964, NULL, 1, 'NAFISA', 'WIBOWO', NULL, NULL),
+(38, '::1', '20052013', '$2y$10$56s0Nze2IjGvfuFQSOyhauce5OA4Vrze8KvDAprqFhWsbjZ8ncMTK', 'aqila@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259965, NULL, 1, 'AQILA', 'ZAHRA', NULL, NULL),
+(39, '::1', '21032011', '$2y$10$qZ0ZftEsXb8F91wDTxLr1uCNsqO0aBmI5hUUtUTpoRd0o1aK45mde', 'via@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259967, NULL, 1, 'VIA', 'SAFIRA', NULL, NULL),
+(40, '::1', '22042010', '$2y$10$ay2HpYh8eh3PnEwu22VY4u4w910JQBE7/pvwxWZ2c7SFb4WfhBL9a', 'yoga@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259968, NULL, 1, 'YOGA', 'SAPUTRA', NULL, NULL),
+(41, '::1', '220420100', '$2y$10$DkmB3InmKr4HAJ8Ilwpbhu.LicXS5Rb3Vh36WtfxgH2OS0z.QTdKu', 'yola@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259970, NULL, 1, 'YOLA', 'SAPUTRI', NULL, NULL),
+(42, '::1', '22072013', '$2y$10$OFJO7N.x8ktsRd7Wmk2CjehhddaDk7GEdDHlnZxjJmMYaTOfNONsy', 'shabilla@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259971, NULL, 1, 'SHABILLA', 'AZZAHWA', NULL, NULL),
+(43, '::1', '23062010', '$2y$10$.JF4T3waMTtrhXJEHcHPTe3o6Kegpqf38wfnoOLsAJBR/Miiz2F2K', 'refhan@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259973, NULL, 1, 'REFHAN', 'PURNAMA', NULL, NULL),
+(44, '::1', '24072012', '$2y$10$RhWzwKcQETVFrwtUrMscI.gkJn5taSojNwvubjzYcjsZA6ck5QcZG', 'thalita@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259975, NULL, 1, 'THALITA', 'RAMADHANI', NULL, NULL),
+(45, '::1', '24122009', '$2y$10$lBoXD6IeailJFCsrp6b7TuYFhgxhkrBvsXY6pbP6UP664wfuNJY0K', 'adinda@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259976, NULL, 1, 'ADINDA', 'NURHABIBAH', NULL, NULL),
+(46, '::1', '26052013', '$2y$10$YwJzEs48jJHSbLhnbdT8yusSo1fL8M5pPoaEeh0a4TBVeTqSdXa/e', 'maylani@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259977, NULL, 1, 'MAYLANI', 'REVALIA', NULL, NULL),
+(47, '::1', '27022009', '$2y$10$jQ91CJr09JXNy.vaPx6m..lNGXrd4m34L5xSpxi/.wsBmQ8mcd28C', 'shafabie@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259978, NULL, 1, 'SHAFABIE', 'PRIANTO', NULL, NULL),
+(48, '::1', '27082009', '$2y$10$W8utEQyMSOFCymEy6K251u90Ez8TVuiVOqq4aGAVQEqeCdjBGn.eW', 'mrasya@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259979, NULL, 1, 'MOCH.', 'RAMADHAN', NULL, NULL),
+(49, '::1', '28022012', '$2y$10$p4YbiybM9DfqABayjQRKDeVrE7pI/3cCcoeg6KjxdzuIvhOiPVVq2', 'ernawati@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259980, NULL, 1, 'ERNAWATI', 'ERNAWATI', NULL, NULL),
+(50, '::1', '28042006', '$2y$10$zZNbGW9nEg.DKxQZyYRoxenWcUpZud.IdAaDka3e.roWVxr5oerny', 'krisna@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259981, NULL, 1, 'KRISNA', 'PRIANTO', NULL, NULL),
+(51, '::1', '28042008', '$2y$10$cXt/YXp.CU6gRQ4syIOMl.8audhIe5cpb6cUdQl4rMkLTV4IEpYlW', 'yemima@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259982, NULL, 1, 'YEMIMA', 'PRAMONO', NULL, NULL),
+(52, '::1', '28052013', '$2y$10$oP/JwBT7skKJGsBH0PzsceIA21WvHu5Fd2sKRs0Wjg62hYlSTdeae', 'alif@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259983, NULL, 1, 'ALIF', 'ARVIANSYAH', NULL, NULL),
+(53, '::1', '29102012', '$2y$10$p2E1FghD7ZpXSvsNjpduGejcmVTnF6c3QVImxS1hI6/9my8xjQMsm', 'dzakira@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259984, NULL, 1, 'DZAKIRA', 'ARDIANA', NULL, NULL),
+(54, '::1', '31032013', '$2y$10$PVwUZ6jG8.qnQ7VYqYbvWu8WNs8YC5MaNP1fdTWxsn9ZUi8qTTrsi', 'bunga@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655259986, 1655278865, 1, 'BUNGA', 'ROSALITA', NULL, NULL),
+(55, '::1', '0102030405', '$2y$10$6JA4qEcfqb5uG9jVIPTxreAO72OtzJTowwcDdDPngor2EAgamQOoW', 'siswasd@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655273295, 1655304267, 1, 'Saya', 'SD', NULL, NULL),
+(56, '::1', '1122334455', '$2y$12$Ckcb.DzPTdRwD8MlTAA20Ozw.fG1CBE4hX4LilzBtTGcNJ2u.HjbW', 'teknik@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655273979, 1655277979, 1, 'Arek', 'Teknik', NULL, NULL),
+(57, '::1', '010203040506', '$2y$10$86BMe6Yla6CSeorqCc6Rfu6PpoznPr6TBx9gdO8JJKL8fb0lehShW', 'siswasmp@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655274887, 1655300502, 1, 'Saya', 'SMP', NULL, NULL),
+(58, '::1', '19053010', '$2y$10$PSpPk0LS5yKbnIxTj5BaJ.kxsuu0R2gYq7W16Pnxwz2okpQrgdv7e', 'vio@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277280, 1655278603, 1, 'VIO', 'PRASETIO', NULL, NULL),
+(59, '::1', '19053022', '$2y$10$lvRIQJYIHFKhpSiGVAytl.l3pGMi3O1VePm.Q/gsrgVBu5k5.gkC6', 'irza@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277282, NULL, 1, 'IRZA', 'ALAMSYAH', NULL, NULL),
+(62, '::1', '19053034', '$2y$10$QSVC3dMkdkrX11h3GwsfMuVlmXCmuVVsWaTc9DTKzKjvQi29zMOoW', 'raka@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277286, 1655278487, 1, 'WHISTLER', 'L', NULL, NULL),
+(63, '::1', '19071001', '$2y$10$k.iKdNWowUqez5bOyv0fkO7LaWtVwiXfvfyMgeNnvzv2RUqDCfu/G', 'alip@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277287, 1655304401, 1, 'ALIP', 'LAILA', NULL, NULL),
+(64, '::1', '19071002', '$2y$10$UiVEoi9v1GXZbZh/rESJVeVtrAiakZs2Az99k3cVl6H6c7JTvxx0a', 'siti@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277288, 1655304385, 1, 'SITI', 'FATIMAH', NULL, NULL),
+(65, '::1', '19071003', '$2y$10$M5LbNriutv3dQ80Pb7ohs.Wlz92OFlZ.OwFoR/gUcUruH3srCsf/6', 'ika@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277289, 1655304158, 1, 'IKA', 'AH', NULL, NULL),
+(66, '::1', '19071005', '$2y$10$15OHtgbr7ygjPsrvrZDNV.Asz.I/fZaZgycwrDrEXJeOHIcVeMIgK', 'diaz@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277291, 1655341588, 1, 'DIAZ', 'LARAS', NULL, NULL),
+(67, '::1', '19071006', '$2y$10$f3NezDrRL77kggFxZxXmz.cJZCTYYjBaYH/8topPnqeBXYwsaZvke', 'reza@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277293, 1655304639, 1, 'REZA', 'AH', NULL, NULL),
+(68, '::1', '19071008', '$2y$10$ox1TAW8XDRAUSSNocVWesO4dCCIKIICvz9Ozw1vpJATa36newZMHa', 'meokbun@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277294, 1655304462, 1, 'MEOKBUN', 'ANASTASYA', NULL, NULL),
+(69, '::1', '19071010', '$2y$10$3DIZZyhhmWDPX0seBsLZsu.yHScGPK1fiRihNzybopRJ.hBG1TNae', 'martha@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277295, 1655341564, 1, 'MARTHA', 'LIAM', NULL, NULL),
+(70, '::1', '19071019', '$2y$10$RnAfphxSu27eAt3cXYFAz.X4EO5I0FgdEZILd4OLE6czQT05r94HO', 'salsabyla@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277296, 1655304562, 1, 'SALSABYLA', 'YUN', NULL, NULL),
+(71, '::1', '19071020', '$2y$10$OpKikFIc9WluImVDJzW.V.6Mfbh0uEr3n882NLf01fKUMJr/mTr1e', 'taufik@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277297, 1655304308, 1, 'TAUFIK', 'RAHMAN', NULL, NULL),
+(72, '::1', '19071021', '$2y$10$T2lfMTgqOjuhPPncg51YSOvRSDfLoxY8XslfF6D1HDTR4JKvqpBh.', 'miqbal@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277298, 1655304553, 1, 'MOCHAMAD', 'ROMADHON', NULL, NULL),
+(73, '::1', '19053006', '$2y$10$QusJsldFW1.F6NA1qZvvpuc5.m5HgDYYplLfDEXvmxujQhVGEcQdW', 'nurmay@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655277548, 1655304328, 1, 'NURMA', 'YUNITA', NULL, NULL),
+(75, '::1', '19053033', '$2y$10$OFjuhuejnIxiURjRhB1KFeBqs2pCUlwEz8heO8JYTMo0IfpZmvVVi', 'baguss@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655278741, 1655278751, 1, 'BAGUS', 'SETYAWAN', NULL, NULL),
+(76, '::1', '19053020', '$2y$10$c3W1O3EGAfbyY7Tub9ZyieBzDh72DoAZzoQLg1yM4/8Rx7IYPJwaW', 'rizky@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655279153, 1655304066, 1, 'MOHAMMAD', 'RIZKY', NULL, NULL),
+(78, '::1', '010101001', '$2y$10$to.WcP0rlqiljsGpwDHEoelVkL0XmTO4LVDHF0Vl/3m0KyLVkdWLy', 'shelly@kkn.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1655300356, 1655300821, 1, 'Shelly', 'Shelly', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -405,12 +522,58 @@ CREATE TABLE `users_groups` (
 
 INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
 (3, 1, 1),
-(20, 18, 2),
 (21, 19, 2),
-(22, 20, 3),
-(23, 21, 3),
-(24, 22, 3),
-(25, 23, 3);
+(26, 24, 2),
+(27, 25, 3),
+(28, 26, 3),
+(29, 27, 3),
+(30, 28, 3),
+(31, 29, 3),
+(32, 30, 3),
+(33, 31, 3),
+(34, 32, 3),
+(35, 33, 3),
+(36, 34, 3),
+(37, 35, 3),
+(38, 36, 3),
+(39, 37, 3),
+(40, 38, 3),
+(41, 39, 3),
+(42, 40, 3),
+(43, 41, 3),
+(44, 42, 3),
+(45, 43, 3),
+(46, 44, 3),
+(47, 45, 3),
+(48, 46, 3),
+(49, 47, 3),
+(50, 48, 3),
+(51, 49, 3),
+(52, 50, 3),
+(53, 51, 3),
+(54, 52, 3),
+(55, 53, 3),
+(56, 54, 3),
+(57, 55, 3),
+(58, 56, 1),
+(59, 57, 3),
+(60, 58, 3),
+(61, 59, 3),
+(64, 62, 3),
+(65, 63, 3),
+(66, 64, 3),
+(67, 65, 3),
+(68, 66, 3),
+(69, 67, 3),
+(70, 68, 3),
+(71, 69, 3),
+(72, 70, 3),
+(73, 71, 3),
+(74, 72, 3),
+(75, 73, 3),
+(77, 75, 3),
+(78, 76, 3),
+(80, 78, 3);
 
 --
 -- Indexes for dumped tables
@@ -532,7 +695,7 @@ ALTER TABLE `users_groups`
 -- AUTO_INCREMENT untuk tabel `dosen`
 --
 ALTER TABLE `dosen`
-  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `groups`
@@ -544,7 +707,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT untuk tabel `h_ujian`
 --
 ALTER TABLE `h_ujian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `jurusan`
@@ -574,43 +737,43 @@ ALTER TABLE `kelas_dosen`
 -- AUTO_INCREMENT untuk tabel `login_attempts`
 --
 ALTER TABLE `login_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT untuk tabel `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id_mahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_mahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT untuk tabel `matkul`
 --
 ALTER TABLE `matkul`
-  MODIFY `id_matkul` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_matkul` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `m_ujian`
 --
 ALTER TABLE `m_ujian`
-  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_ujian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_soal`
 --
 ALTER TABLE `tb_soal`
-  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_soal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT untuk tabel `users_groups`
 --
 ALTER TABLE `users_groups`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -674,4 +837,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
- 

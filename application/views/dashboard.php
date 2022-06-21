@@ -59,7 +59,7 @@
         <div class="col-sm-8">
             <div class="box box-solid">
                 <div class="box-header bg-purple">
-                    <h3 class="box-title">Pemberitahuan</h3>
+                    <h3 class="box-title">Notification</h3>
                 </div>
                 <div class="box-body">
                     <p>Halo Gaiss Selamat Datang di Ujian Online CBT, Good Luck Bro & Sist</p>
@@ -107,12 +107,12 @@
         <div class="col-sm-8">
             <div class="box box-solid">
                 <div class="box-header bg-purple">
-                    <h3 class="box-title">Pemberitahuan</h3>
+                    <h3 class="box-title">Notification</h3>
                 </div>
                 <div class="box-body">
-                    <p>Hai Guys Selamat datang, Selamat mengerjakan untuk mengerjakan ujian silahkan klik menu ujian di sebelah kiri</p>
-                    <p>
-                        Good Luck...</p>
+                    <p>Hai Guys Selamat datang, Selamat mengerjakan </p>
+                    <p>untuk mengerjakan ujian silahkan klik menu ujian di sebelah kiri</p>
+                    <p>Good Luck ....</p>
 
                 </div>
             </div>
